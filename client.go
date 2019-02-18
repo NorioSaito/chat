@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/gorilla/websocket"
 )
 
@@ -29,7 +27,6 @@ func (c *client) read() {
 
 func (c *client) write() {
 	for msg := range c.send {
-		fmt.Print(msg)
 		if err := c.socket.WriteMessage(websocket.TextMessage, msg); err != nil {
 			break
 		}
