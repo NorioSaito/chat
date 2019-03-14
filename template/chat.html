@@ -40,9 +40,9 @@
           }
           socket.onmessage = function(e) {
             var msg = eval("("+e.data+")");
-            var time = msg.When.Format("2019/02/25 13:50:00")
+            //var time = msg.When.Format("2019/02/25 13:50:00")
 
-            var sec   = ( time.getSeconds() < 10 ) ? '0' + time.getSeconds() : time.getSeconds();
+            //var sec   = ( time.getSeconds() < 10 ) ? '0' + time.getSeconds() : time.getSeconds();
             messages.append(
               $("<li>").append(
                 $("<img>").attr("title", msg.Name).css({
@@ -51,7 +51,7 @@
                 }).attr("src", msg.AvatarURL),
                 $("<strong>").text(msg.Name + ": "),
                 $("<span>").text(msg.Message),
-                $("<span>").text("(" + time + ")")
+                //$("<span>").text("(" + time + ")")
               )
             );
           }
